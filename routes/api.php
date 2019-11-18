@@ -17,3 +17,5 @@ Route::get('categories','CategoryController@index');
 Route::post('categories/add','CategoryController@store');
 Route::post('categories/update/{id}','CategoryController@update');
 Route::post('categories/delete/{id}','CategoryController@destroy');
+
+Route::get('images','ImageController@index');
