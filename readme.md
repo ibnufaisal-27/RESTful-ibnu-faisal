@@ -14,18 +14,18 @@
 <p><em>NB : lakukan perintah di atas secara berurutan</em></p>
 
 ## Testing With Postman
-#### A. CRUD Table Categories
+### A. CRUD Table Categories
 **URL Request :**
 1. /categories method GET            : untuk melihat semua kategori
 2. /categories/add                   : untuk menambahkan kategori baru
 3. /categories/update/<em>id</em>    : untuk update kategori
 4. /categories/delete/<em>id</em>    : untuk hapus kategori
 
-1. VIEW CATEGORIES
+#### VIEW CATEGORIES
 url : http://localhsot:8000/categories
 <img src="https://i.ibb.co/GvWJZgK/view-categories.png" alt="view-categories" border="0">
 
-2. ADD CATEGORIES
+#### ADD CATEGORIES
 url : http://localhsot:8000/categories/add
 
 Pada Body Pilih Isikan Key dan Value berikut :
