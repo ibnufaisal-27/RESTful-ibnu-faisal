@@ -36,7 +36,22 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request->name;
+        $enable = $request->enable;
+
+            $data = new \App\Category();
+            $data->name = $name;
+            $data->enable = $enable;
+
+            if($data->save()){
+                $res['message'] = "Category Insert Success !";
+                $res['value'] = $data;
+                return response($res,201);
+            }
+            $res['message'] = "400";
+            $res['value'] = "Category Insert Failded !";
+         return response()->json($res, 400); 
+        
     }
 
     /**
