@@ -36,3 +36,15 @@ name | String
 enable | Boolean
 
 <img src="https://i.ibb.co/hgJ2F6W/add-categories.png" alt="add-categories" border="0">
+
+#### UPDATE CATEGORIES
+url : http://localhsot:8000/categories/update/{id-category-yang-mau-diupdate}
+
+Pada Body Pilih Isikan Key dan Value berikut :
+
+Key | Value
+--- | ---
+name | String
+enable | Boolean
+
+<img src="https://i.ibb.co/9h6QKP6/update-categories.png" alt="update-categories" border="0">
