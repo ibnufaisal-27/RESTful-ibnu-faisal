@@ -85,7 +85,33 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categoryFind = Category::find($id);
+
+        if($categoryFind == false) {
+            return response()->json(['status'=>'404', 'message'=>'Category ID not found !'], 404); 
+        } else {
+            $name = $request->name;
+            $enable = $request->enable;
+
+            $data = Category::where('id',$id)->first();
+            $data->name = $name;
+            $data->enable = $enable;
+            
+            if($data->update()) {
+
+                $res['message'] = "Category Update Success !";
+                $res['value'] = [
+                    'id' => $data->id,
+                    'name' =>$data->name,
+                    'enable' =>  $data->enable
+                ];
+                return response($res,201);
+            } else {
+                $res['message'] = "400";
+                $res['value'] = "Category Update Failded !";
+                return response()->json($res, 400); 
+            }
+        }
     }
 
     /**

@@ -15,3 +15,4 @@ use Illuminate\Http\Request;
 
 Route::get('categories','CategoryController@index');
 Route::post('categories/add','CategoryController@store');
+Route::post('categories/update/{id}','CategoryController@update');
