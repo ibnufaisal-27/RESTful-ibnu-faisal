@@ -36,7 +36,23 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request->name;
+        $file = $request->file;
+        $enable = $request->enable;
+
+            $data = new \App\Image();
+            $data->name = $name;
+            $data->file = $file;
+            $data->enable = $enable;
+
+            if($data->save()){
+                $res['message'] = "Image Insert Success !";
+                $res['value'] = $data;
+                return response($res,201);
+            }
+            $res['message'] = "400";
+            $res['value'] = "Image Insert Failed !";
+         return response()->json($res, 400); 
     }
 
     /**
@@ -70,7 +86,36 @@ class ImageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $imageFind = Image::find($id);
+
+        if($imageFind == false) {
+            return response()->json(['status'=>'404', 'message'=>'Image ID not found !'], 404); 
+        } else {
+            $name = $request->name;
+            $file = $request->file;
+            $enable = $request->enable;
+
+            $data = Image::where('id',$id)->first();
+            $data->name = $name;
+            $data->file = $file;
+            $data->enable = $enable;
+            
+            if($data->update()) {
+
+                $res['message'] = "Image Update Success !";
+                $res['value'] = [
+                    'id' => $data->id,
+                    'name' =>$data->name,
+                    'file' =>$data->file,
+                    'enable' =>  $data->enable
+                ];
+                return response($res,201);
+            } else {
+                $res['message'] = "400";
+                $res['value'] = "Image Update Failed !";
+                return response()->json($res, 400); 
+            }
+        }
     }
 
     /**
