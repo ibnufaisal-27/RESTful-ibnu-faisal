@@ -23,10 +23,15 @@
 
 #### VIEW CATEGORIES
 url : http://localhsot:8000/categories
+
+method : GET
+
 <img src="https://i.ibb.co/GvWJZgK/view-categories.png" alt="view-categories" border="0">
 
 #### ADD CATEGORIES
 url : http://localhsot:8000/categories/add
+
+method : GET
 
 Pada Body Pilih Isikan Key dan Value berikut :
 
@@ -40,6 +45,8 @@ enable | Boolean
 #### UPDATE CATEGORIES
 url : http://localhsot:8000/categories/update/{id-category-yang-mau-diupdate}
 
+method : POST
+
 Pada Body Pilih Isikan Key dan Value berikut :
 
 Key | Value
@@ -48,3 +55,11 @@ name | String
 enable | Boolean
 
 <img src="https://i.ibb.co/9h6QKP6/update-categories.png" alt="update-categories" border="0">
+
+
+#### UPDATE CATEGORIES
+url : http://localhsot:8000/categories/delete/{id-category-yang-mau-didelete}
+
+method : POST
+
+<img src="https://i.ibb.co/Khq4bDj/delete-categories.png" alt="delete-categories" border="0">
