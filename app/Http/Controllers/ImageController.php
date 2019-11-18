@@ -126,6 +126,22 @@ class ImageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $imageFind = Image::find($id);
+
+        if($imageFind == false) {
+            return response()->json(['status'=>'404', 'message'=>'Image ID not found !'], 404); 
+        } else {
+            $data = Image::where('id',$id)->first();
+
+            if($data->delete()){
+                $res['message'] = "Image Delete Success !";
+                $res['value'] = $data;
+                return response($res);
+            }
+            else{
+                $res['message'] = "Image Delete Failed!";
+                return response($res);
+            }
+        }
     }
 }

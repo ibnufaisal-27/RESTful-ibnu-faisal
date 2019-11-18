@@ -138,6 +138,6 @@ class CategoryController extends Controller
                 $res['message'] = "Category Delete Failed!";
                 return response($res);
             }
-    }
+        }
     }
 }
