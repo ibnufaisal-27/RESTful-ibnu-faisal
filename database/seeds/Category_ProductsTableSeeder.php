@@ -11,6 +11,8 @@ class Category_ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::insert("INSERT INTO `category_products` (`product_id`, `category_id`) VALUES
+        (1,1),
+        (2,2);");
     }
 }

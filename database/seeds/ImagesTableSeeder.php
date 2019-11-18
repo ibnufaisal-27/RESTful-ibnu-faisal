@@ -11,6 +11,8 @@ class ImagesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::insert("INSERT INTO `images` (`id`, `name`, `file`,`enable`) VALUES
+        (1, 'Asus Vivobox 360', 'asus.jpg', true),
+        (2, 'FlashDisk Sandisk 128 GB','sandisk_128.jpg', true);");
     }
 }
