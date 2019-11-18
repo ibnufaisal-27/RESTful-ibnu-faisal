@@ -16,13 +16,13 @@
 ## Testing With Postman
 ### A. CRUD Table Categories
 **URL Request :**
-1. /categories                       : untuk melihat semua kategori  | method : GET 
-2. /categories/add                   : untuk menambahkan kategori baru  | method : POST
-3. /categories/update/<em>id</em>    : untuk update kategori | method : POST
-4. /categories/delete/<em>id</em>    : untuk hapus kategori | method : POST
+1. /api/categories                       : untuk melihat semua kategori  | method : GET 
+2. /api/categories/add                   : untuk menambahkan kategori baru  | method : POST
+3. /api/categories/update/<em>id</em>    : untuk update kategori | method : POST
+4. /api/categories/delete/<em>id</em>    : untuk hapus kategori | method : POST
 
 #### VIEW CATEGORIES
-    url : http://localhsot:8000/categories
+    url : http://localhsot:8000/api/categories
     
     method : GET
 
@@ -30,7 +30,7 @@
 
 #### ADD CATEGORIES
 
-    url : http://localhsot:8000/categories/add
+    url : http://localhsot:8000/api/categories/add
     
     method : POST
 
@@ -60,7 +60,7 @@ enable | Boolean
 
 #### DELETE CATEGORIES
 
-    url : http://localhsot:8000/categories/delete/{id-category-yang-mau-didelete}
+    url : http://localhsot:8000/api/categories/delete/{id-category-yang-mau-didelete}
     
     method : POST
 
