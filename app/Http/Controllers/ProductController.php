@@ -135,7 +135,57 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categoryFind = Category::find($request->category_id);
+        $imageFind = Image::find($request->image_id);
+        $productFind = Product::find($id);
+
+        $name = $request->name;
+        $description = $request->description;
+        $enable = $request->enable;
+        $category_id = $request->category_id;
+        $image_id = $request->image_id;
+
+        if($categoryFind == false) {
+            return response()->json(['status'=>'404', 'message'=>'Category ID not found !'], 404); 
+        } else if($imageFind == false ) {
+            return response()->json(['status'=>'404', 'message'=>'Image ID not found !'], 404); 
+        } else if ($productFind == false) {
+            return response()->json(['status'=>'404', 'message'=>'Product ID not found !'], 404);
+        } else {
+            $data = Product::where('id',$id)->first();
+            $data->name = $name;
+            $data->description = $description;
+            $data->enable = $enable;
+            $data->update();
+
+                $data_category = new \App\CategoryProduct();
+                $data_category->where('product_id',$data->id)->update(array('category_id' => $category_id));
+                
+                $data_image = new \App\ProductImage();
+                $data_image->where('product_id',$data->id)->update(array('image_id' => $image_id));
+
+                $res['message'] = "Product Update Success !";
+                $res['value'] = [
+                    'id' => $data->id,
+                    'name' =>$data->name,
+                    'description' => $data->description,
+                    'enable' =>  $data->enable,
+                    'category' => [
+                        'product_id' => $data->id,
+                        'category_id' => $category_id
+                    ],
+                    'product_image' => [
+                        'product_id' => $data->id,
+                        'product_image' => $image_id
+                    ]
+
+                ];
+                return response($res,201);
+            
+        }
+            $res['message'] = "400";
+            $res['value'] = "Product Insert Failded !";
+         return response()->json($res, 400); 
     }
 
     /**
