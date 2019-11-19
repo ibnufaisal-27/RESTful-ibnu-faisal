@@ -8,15 +8,15 @@
 4. Memiliki koneksi internet (untuk proses installasi).
 
 ## How To Use
-1. Download project ini "https://github.com/ibnufaisal-27/RESTful-ibnu-faisal"
-2. Letakkan dalam **htdocs** dalam server lokal masing-masing. Misal **htdocs/RESTful-ibnu-faisal**
+1. Download project ini ```https://github.com/ibnufaisal-27/RESTful-ibnu-faisal```
+2. Letakkan dalam ```htdocs``` dalam server lokal masing-masing. Misal ```htdocs/RESTful-ibnu-faisal```
 3. Buat Database di server lokal
-4. Melalui terminal, cd ke direktori **htdocs/RESTful-ibnu-faisal**.
-5. Pada terminal, berikan perintah **composer install** (Perlu koneksi internet). Composer akan menginstall dependency paket dari source code tersebut hingga selesai.
-6. Duplikat file **.env.example**, lalu rename menjadi **.env**
-7. Edit File **<em>.env</em>** sesuaikan **database name** , **database user**, dan **database password**
-8. Lakukan perintah **"php artisan migrate"** untuk memulai migrasi struktur database ke dalam server lokal
-9. Lakukan perintah **"php artisan db:seed"** untuk memulai mengisikan data **dummy** ke dalam tabel
+4. Melalui terminal, cd ke direktori ```htdocs/RESTful-ibnu-faisal```
+5. Pada terminal, jalankan perintah ```composer install``` (Perlu koneksi internet). Composer akan menginstall dependency paket dari source code tersebut hingga selesai.
+6. Duplikat file ```.env.example```, lalu rename menjadi ```.env```
+7. Edit File ```.env``` sesuaikan **database name** , **database user**, dan **database password**
+8. Lakukan perintah ```php artisan migrate``` pada terminal untuk memulai migrasi struktur database ke dalam server lokal
+9. Lakukan perintah ```php artisan db:seed``` pada terminal untuk memulai mengisikan data **dummy** ke dalam tabel
 10. Aplikasi siap digunakan
 11. Gunakan Postman untuk mengetes aplikasi RESTFull api ini
 <p><em>NB : lakukan perintah di atas secara berurutan</em></p>
