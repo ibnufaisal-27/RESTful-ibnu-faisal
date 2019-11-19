@@ -15,3 +15,4 @@ use Illuminate\Http\Request;
 
 Route::resource('categories', 'CategoryController');
 Route::resource('images', 'ImageController');
+Route::resource('products', 'ProductController');
