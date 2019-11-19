@@ -223,15 +223,30 @@ Dalam Aplikasi ini sudah dilengkapi dengan penanganan sejumlah error, antara lai
 
 ### VIEW PRODUCT BY ID NOT FOUND
 
+Ketika akan menampilkan product, dengan product ID nya tidak ada, maka akan muncul pesan "Product Not Found" dengan status 404
+
+<img src="https://i.ibb.co/Z84Wdh8/product-not-found.jpg" alt="product-not-found" border="0">
+
 ### ADD PRODUCT CATEGORY ID NOT FOUND
 
-Ketika akan menambahkan product, tetapi Category ID nya belum ada
+Ketika akan menambahkan product, tetapi Category ID nya belum ada, maka akan muncul pesan "Category ID Not Found" dengan status 404
+
+<img src="https://i.ibb.co/8Kr1mvw/add-product-category-not-found.jpg" alt="add-product-category-not-found" border="0">
 
 ### ADD PRODUCT IMAGE ID NOT FOUND
 
-Ketika akan menambahkan product, tetapi Image ID nya belum ada
+Ketika akan menambahkan product, tetapi Image ID nya belum ada, maka akan muncul pesan "Image ID Not Found" dengan status 404
+
+<img src="https://i.ibb.co/x2NN2F4/add-product-image-not-found.jpg" alt="add-product-image-not-found" border="0">
 
 ### UPDATE PRODUCT, ID PRODUCT NOT FOUND
 
+Ketika akan update product, tetapi product ID nya belum ada, maka akan muncul pesan "Product ID Not Found" dengan status 404
+
+<img src="https://i.ibb.co/GcVWKxt/update-product-not-found.jpg" alt="update-product-not-found" border="0">
+
 ### DELETE PRODUCT, ID PRODUCT NOT FOUND
 
+Ketika akan delete product, tetapi product ID nya belum ada, maka akan muncul pesan "Product ID Not Found" dengan status 404
+
+<img src="https://i.ibb.co/zJSTZGk/delete-product-not-found.jpg" alt="delete-product-not-found" border="0">
