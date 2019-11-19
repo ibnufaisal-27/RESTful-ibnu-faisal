@@ -112,7 +112,17 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = \App\Product::with(['categoryProduct','productImage'])->where('id',$id)->get();
+
+        if(count($data) > 0){ //mengecek apakah data kosong atau tidak
+            $res['message'] = "Success !";
+            $res['values'] =  $data;
+            return response($res,200);
+        }
+        else{
+            $res['message'] = "Product Not Found !";
+            return response($res,404);
+        }
     }
 
     /**
