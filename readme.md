@@ -79,6 +79,7 @@ Example : http://localhost:8000/api/categories/7
 
 ### B. CRUD Table Images
 **URL Request :**
+
 Method | URL   | Note 
 --- | ---   |  --- 
 GET | /api/images   | untuk melihat semua images
