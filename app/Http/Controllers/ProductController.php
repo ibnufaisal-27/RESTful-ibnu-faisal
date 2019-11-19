@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\CategoryProduct;
+use App\Category;
 use App\Product;
+use App\Image;
+use App\ProductImage;
 
 class ProductController extends Controller
 {
@@ -46,7 +50,58 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $categoryFind = Category::find($request->category_id);
+        $imageFind = Image::find($request->image_id);
+
+        $name = $request->name;
+        $description = $request->description;
+        $enable = $request->enable;
+        $category_id = $request->category_id;
+        $image_id = $request->image_id;
+
+        if($categoryFind == false) {
+            return response()->json(['status'=>'404', 'message'=>'Category ID not found !'], 404); 
+        } else if($imageFind == false ) {
+            return response()->json(['status'=>'404', 'message'=>'Image ID not found !'], 404); 
+        } else {
+            $data = new \App\Product();
+            $data->name = $name;
+            $data->description = $description;
+            $data->enable = $enable;
+
+            if($data->save()){
+                $data_category = new \App\CategoryProduct();
+                $data_category->product_id = $data->id;
+                $data_category->category_id = $category_id;
+                $data_category->save();
+
+                $data_image = new \App\ProductImage();
+                $data_image->product_id = $data->id;
+                $data_image->image_id = $image_id;
+                $data_image->save();
+
+                $res['message'] = "Product Insert Success !";
+                $res['value'] = [
+                    'id' => $data->id,
+                    'name' =>$data->name,
+                    'description' => $data->description,
+                    'enable' =>  $data->enable,
+                    'category' => [
+                        'product_id' => $data->id,
+                        'category_id' => $data_category->category_id
+                    ],
+                    'product_image' => [
+                        'product_id' => $data->id,
+                        'product_image' => $data_image->image_id
+                    ]
+
+                ];
+                return response($res,201);
+            }
+        }
+            $res['message'] = "400";
+            $res['value'] = "Product Insert Failded !";
+         return response()->json($res, 400); 
     }
 
     /**
