@@ -196,6 +196,16 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Product::where('id',$id)->first();
+
+        if($data->delete()){
+            $res['message'] = "Product Delete Success !";
+            $res['value'] = $data;
+            return response($res,200);
+        }
+        else{
+            $res['message'] = "Product Delete Failed !";
+            return response($res,404);
+        }
     }
 }
