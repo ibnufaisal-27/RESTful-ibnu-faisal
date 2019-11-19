@@ -1,6 +1,7 @@
 <p align="center">
 <h1>Built RESTful API with LARAVEL 6</h1>
 </p>
+
 ## Requirement
 1. Memiliki CLI/Command Line Interface berupa Command Prompt (CMD) atau Power Shell atau Git Bash ( terminal).
 2. Memiliki Web Server (misal XAMPP) dengan PHP minimal versi 7.
