@@ -84,8 +84,8 @@ Method | URL   | Note
 --- | ---   |  --- 
 GET | /api/images   | untuk melihat semua images
 POST | /api/images   | untuk menambahkan image baru
-PUT | /api/<em>id</em>   | untuk update image
-DELETE | /api/<em>id</em>   | untuk hapus image
+PUT | /api/images/<em>id</em>   | untuk update image
+DELETE | /api/images/<em>id</em>   | untuk hapus image
 
 #### VIEW IMAGES
     url : http://localhsot:8000/categories
