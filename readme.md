@@ -16,105 +16,124 @@
 ## Testing With Postman
 ### A. CRUD Table Categories
 **URL Request :**
-1. /api/categories                       : untuk melihat semua kategori  | method : GET 
-2. /api/categories/add                   : untuk menambahkan kategori baru  | method : POST
-3. /api/categories/update/<em>id</em>    : untuk update kategori | method : POST
-4. /api/categories/delete/<em>id</em>    : untuk hapus kategori | method : POST
+
+Method | URL   | Note 
+--- | ---   |  --- 
+GET | /api/categories   | untuk melihat semua kategori
+POST | /api/categories/add   | untuk menambahkan kategori baru
+PUT | /api/categories/<em>id</em>   | untuk update kategori
+DELETE | /api/categories/<em>id</em>   | untuk hapus kategori
+
 
 #### VIEW CATEGORIES
     url : http://localhsot:8000/api/categories
     
     method : GET
 
-<img src="https://i.ibb.co/GvWJZgK/view-categories.png" alt="view-categories" border="0">
+<img src="https://i.ibb.co/LzyWVHF/view-categories.jpg" alt="view-categories" border="0">
 
 #### ADD CATEGORIES
 
-    url : http://localhsot:8000/api/categories/add
+    url : http://localhsot:8000/api/categories/
     
     method : POST
 
-Pada Body Pilih Isikan Key dan Value berikut :
+Pada Parameter Isikan Key dan Value berikut :
 
-Key | Value
---- | ---
-name | String
-enable | Boolean
+Key | Value | Ket
+--- | --- | ---
+name | String | -
+enable | Boolean | 1=true, 0=false
 
-<img src="https://i.ibb.co/hgJ2F6W/add-categories.png" alt="add-categories" border="0">
+Example : http://localhost:8000/api/categories?name="Peralatan%20Jaringan"&enable=1
+
+<img src="https://i.ibb.co/HzZGBZp/add-categories.jpg" alt="add-categories" border="0">
 
 #### UPDATE CATEGORIES
-    url : http://localhsot:8000/categories/update/{id-category-yang-mau-diupdate}
+    url : http://localhsot:8000/categories/{id-category-yang-mau-diupdate}
     
-    method : POST
+    method : PUT
 
-Pada Body Pilih Isikan Key dan Value berikut :
+Pada Parameter Isikan Key dan Value berikut :
 
-Key | Value
---- | ---
-name | String
-enable | Boolean
+Key | Value | Ket
+--- | --- | ---
+name | String | -
+enable | Boolean | 1=true, 0=false
 
-<img src="https://i.ibb.co/9h6QKP6/update-categories.png" alt="update-categories" border="0">
+Example : http://localhost:8000/api/categories/7?name=Networking&enable=1
+
+<img src="https://i.ibb.co/p2fXXtv/update-categories.jpg" alt="update-categories" border="0">
 
 
 #### DELETE CATEGORIES
 
-    url : http://localhsot:8000/api/categories/delete/{id-category-yang-mau-didelete}
+    url : http://localhsot:8000/api/categories/{id-category-yang-mau-didelete}
     
-    method : POST
+    method : DELETE
 
-<img src="https://i.ibb.co/Khq4bDj/delete-categories.png" alt="delete-categories" border="0">
+Example : http://localhost:8000/api/categories/7
+
+<img src="https://i.ibb.co/2nkY3Jy/delete-categories.jpg" alt="delete-categories" border="0">
 
 
 ### B. CRUD Table Images
 **URL Request :**
-1. /images                           : untuk melihat semua kategori  | method : GET 
-2. /images/add                       : untuk menambahkan kategori baru  | method : POST
-3. /images/update/<em>id</em>        : untuk update kategori | method : POST
-4. /images/delete/<em>id</em>        : untuk hapus kategori | method : POST
+
+Method | URL   | Note 
+--- | ---   |  --- 
+GET | /api/images   | untuk melihat semua images
+POST | /api/images   | untuk menambahkan image baru
+PUT | /api/images/<em>id</em>   | untuk update image
+DELETE | /api/images/<em>id</em>   | untuk hapus image
 
 #### VIEW IMAGES
     url : http://localhsot:8000/categories
     
     method : GET
+Example : http://localhost:8000/api/images
 
-<img src="https://i.ibb.co/GvWJZgK/view-categories.png" alt="view-categories" border="0">
+<img src="https://i.ibb.co/RNbsWkZ/view-images.jpg" alt="view-images" border="0">
 
 #### ADD IMAGES
 
-    url : http://localhsot:8000/categories/add
+    url : http://localhsot:8000/categories
     
     method : POST
 
-Pada Body Pilih Isikan Key dan Value berikut :
+Pada Parameter Isikan Key dan Value berikut :
 
-Key | Value
---- | ---
-name | String
-enable | Boolean
+Key | Value | Ket
+--- | --- | ---
+name | String | -
+file | String | -
+enable | Boolean | 1=true, 0=false
 
-<img src="https://i.ibb.co/hgJ2F6W/add-categories.png" alt="add-categories" border="0">
+Example : http://localhost:8000/api/images?name="Printer%20HP%20230"&file="hp_260.jpg"&enable=1
+<img src="https://i.ibb.co/ncWZbKP/add-image.jpg" alt="add-image" border="0">
 
 #### UPDATE IMAGES
-    url : http://localhsot:8000/categories/update/{id-category-yang-mau-diupdate}
+    url : http://localhsot:8000/categories/{id-category-yang-mau-diupdate}
     
-    method : POST
+    method : PUT
 
-Pada Body Pilih Isikan Key dan Value berikut :
+Pada Parameter Pilih Isikan Key dan Value berikut :
 
-Key | Value
---- | ---
-name | String
-enable | Boolean
+Key | Value | Ket
+--- | --- | ---
+name | String | -
+file | String | -
+enable | Boolean | 1=true, 0=false
 
-<img src="https://i.ibb.co/9h6QKP6/update-categories.png" alt="update-categories" border="0">
+Example : http://localhost:8000/api/images/4?name="Printer%20HP%202676"&file="hp_2676.png"&enable=1
+
+<img src="https://i.ibb.co/BwXbzt8/update-image.jpg" alt="update-image" border="0">
 
 
 #### DELETE IMAGES
 
-    url : http://localhsot:8000/categories/delete/{id-category-yang-mau-didelete}
+    url : http://localhsot:8000/categories/{id-category-yang-mau-didelete}
     
-    method : POST
+    method : DELETE
 
-<img src="https://i.ibb.co/Khq4bDj/delete-categories.png" alt="delete-categories" border="0">
+<img src="https://i.ibb.co/hsZtN0X/delete-image.jpg" alt="delete-image" border="0">
