@@ -16,55 +16,65 @@
 ## Testing With Postman
 ### A. CRUD Table Categories
 **URL Request :**
-1. /api/categories                       : untuk melihat semua kategori  | method : GET 
-2. /api/categories/add                   : untuk menambahkan kategori baru  | method : POST
-3. /api/categories/update/<em>id</em>    : untuk update kategori | method : POST
-4. /api/categories/delete/<em>id</em>    : untuk hapus kategori | method : POST
+
+Method | URL   | Note 
+--- | ---   |  --- 
+GET | /api/categories   | untuk melihat semua kategori
+POST | /api/categories/add   | untuk menambahkan kategori baru
+PUT | /api/categories/<em>id</em>   | untuk update kategori
+DELETE | /api/categories/<em>id</em>   | untuk hapus kategori
+
 
 #### VIEW CATEGORIES
     url : http://localhsot:8000/api/categories
     
     method : GET
 
-<img src="https://i.ibb.co/GvWJZgK/view-categories.png" alt="view-categories" border="0">
+<img src="https://i.ibb.co/LzyWVHF/view-categories.jpg" alt="view-categories" border="0">
 
 #### ADD CATEGORIES
 
-    url : http://localhsot:8000/api/categories/add
+    url : http://localhsot:8000/api/categories/
     
     method : POST
 
 Pada Body Pilih Isikan Key dan Value berikut :
 
-Key | Value
---- | ---
-name | String
-enable | Boolean
+Key | Value | Ket
+--- | --- | ---
+name | String | -
+enable | Boolean | 1=true, 0=false
 
-<img src="https://i.ibb.co/hgJ2F6W/add-categories.png" alt="add-categories" border="0">
+Example : http://localhost:8000/api/categories?name="Peralatan%20Jaringan"&enable=1
+
+<img src="https://i.ibb.co/HzZGBZp/add-categories.jpg" alt="add-categories" border="0">
 
 #### UPDATE CATEGORIES
-    url : http://localhsot:8000/categories/update/{id-category-yang-mau-diupdate}
+    url : http://localhsot:8000/categories/{id-category-yang-mau-diupdate}
     
-    method : POST
+    method : PUT
 
 Pada Body Pilih Isikan Key dan Value berikut :
 
-Key | Value
---- | ---
-name | String
-enable | Boolean
+Key | Value | Ket
+--- | --- | ---
+name | String | -
+enable | Boolean | 1=true, 0=false
 
-<img src="https://i.ibb.co/9h6QKP6/update-categories.png" alt="update-categories" border="0">
+Example : http://localhost:8000/api/categories/7?name=Networking&enable=1
+
+<img src="https://i.ibb.co/p2fXXtv/update-categories.jpg" alt="update-categories" border="0">
 
 
 #### DELETE CATEGORIES
 
-    url : http://localhsot:8000/api/categories/delete/{id-category-yang-mau-didelete}
+    url : http://localhsot:8000/api/categories/{id-category-yang-mau-didelete}
     
-    method : POST
+    method : DELETE
 
-<img src="https://i.ibb.co/Khq4bDj/delete-categories.png" alt="delete-categories" border="0">
+Example : http://localhost:8000/api/categories/7
+
+<img src="https://i.ibb.co/2nkY3Jy/delete-categories.jpg" alt="delete-categories" border="0">
 
 
 ### B. CRUD Table Images
