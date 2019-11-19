@@ -207,15 +207,20 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $data = Product::where('id',$id)->first();
+        $productFind = Product::find($id);
 
-        if($data->delete()){
-            $res['message'] = "Product Delete Success !";
-            $res['value'] = $data;
-            return response($res,200);
-        }
-        else{
-            $res['message'] = "Product Delete Failed !";
-            return response($res,404);
+        if ($productFind ) {
+            if($data->delete()){
+                $res['message'] = "Product Delete Success !";
+                $res['value'] = $data;
+                return response($res,200);
+            }
+            else{
+                $res['message'] = "Product Delete Failed !";
+                return response($res,404);
+            }
+        } else {
+                return response()->json(['status'=>'404', 'message'=>'Product ID not found !'], 404);
         }
     }
 }
