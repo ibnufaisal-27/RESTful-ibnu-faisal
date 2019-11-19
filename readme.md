@@ -137,3 +137,101 @@ Example : http://localhost:8000/api/images/4?name="Printer%20HP%202676"&file="hp
     method : DELETE
 
 <img src="https://i.ibb.co/hsZtN0X/delete-image.jpg" alt="delete-image" border="0">
+
+
+### B. CRUD Table Products
+**URL Request :**
+
+Method | URL   | Note 
+--- | ---   |  --- 
+GET | /api/products   | untuk melihat semua products
+GET | /api/products/<em>id</em>    | untuk melihat product berdasarkan ID tertentu
+POST | /api/products   | untuk menambahkan product baru
+PUT | /api/products/<em>id</em>   | untuk product image
+DELETE | /api/products/<em>id</em>   | untuk product image
+
+#### VIEW PRODUCTS
+    url : http://localhsot:8000/products
+    
+    method : GET
+    
+Example : http://localhost:8000/api/products
+
+<img src="https://i.ibb.co/SN5Q0vv/view-products.jpg" alt="view-products" border="0">
+
+#### VIEW PRODUCTS BY ID
+    url : http://localhsot:8000/products/{id}
+    
+    method : GET
+    
+Example : http://localhost:8000/api/products/1
+
+<img src="https://i.ibb.co/H7XxYK1/view-products-by-id.jpg" alt="view-products-by-id" border="0">
+
+#### ADD PRODUCT
+
+    url : http://localhsot:8000/products
+    
+    method : POST
+
+Pada Parameter Isikan Key dan Value berikut :
+
+Key | Value | Ket
+--- | --- | ---
+name | String | -
+description | String | -
+enable | Boolean | 1=true, 0=false
+category_id | Integer | Reference ke tabel Category
+image_id | Integer | Reference ke tabel Image
+
+Example : http://localhost:8000/api/products?name="Printer%20HP%20Laser%20Jet%206265"&description="Printer%20HP%20Laser%20Jet%206265%20All%20in%20One"&enable=1&category_id=6&image_id=1
+
+<img src="https://i.ibb.co/svGvc3S/add-product.jpg" alt="add-product" border="0">
+
+#### UPDATE PRODUCT
+    url : http://localhsot:8000/products/{id-product-yang-mau-diupdate}
+    
+    method : PUT
+
+Pada Parameter Pilih Isikan Key dan Value berikut :
+
+Key | Value | Ket
+--- | --- | ---
+name | String | -
+description | String | -
+enable | Boolean | 1=true, 0=false
+category_id | Integer | Reference ke tabel Category
+image_id | Integer | Reference ke tabel Image
+
+Example : http://localhost:8000/api/products/4?name="Printer%20HP%20Laser%20Jet%206000"&description="Printer%20HP%20Laser%20Jet%206000%20Scan%20Print%20Copy"&enable=1&category_id=6&image_id=2
+
+<img src="https://i.ibb.co/WfXmx5z/update-product.jpg" alt="update-product" border="0">
+
+
+#### DELETE PRODUCT
+
+    url : http://localhsot:8000/products/{id-product-yang-mau-didelete}
+    
+    method : DELETE
+
+Example : http://localhost:8000/api/products/4
+<img src="https://i.ibb.co/89Q9jvW/delete-product.jpg" alt="delete-product" border="0">
+
+
+## ERROR HANDLING
+Dalam Aplikasi ini sudah dilengkapi dengan penanganan sejumlah error, antara lain :
+
+### VIEW PRODUCT BY ID NOT FOUND
+
+### ADD PRODUCT CATEGORY ID NOT FOUND
+
+Ketika akan menambahkan product, tetapi Category ID nya belum ada
+
+### ADD PRODUCT IMAGE ID NOT FOUND
+
+Ketika akan menambahkan product, tetapi Image ID nya belum ada
+
+### UPDATE PRODUCT, ID PRODUCT NOT FOUND
+
+### DELETE PRODUCT, ID PRODUCT NOT FOUND
+
